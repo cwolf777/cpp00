@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:03:36 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/25 15:03:21 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/25 16:05:48 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	Phonebook::searchContacts() const
 		return;
 	}
 	
-	std::cout << "Index |First Name| Last Name| Nickname\n";
+	std::cout << "     Index|First Name| Last Name|  Nickname\n";
 	for (int i = 0; i < totalContacts; ++i)
 	{
-		contacts[i].displayFull();
+		contacts[i].displayShort(i);
 	}
 	
 	std::cout << "Enter index (0-" << totalContacts - 1 <<"): ";

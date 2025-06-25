@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 13:13:01 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/25 15:02:08 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/25 16:10:45 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void Contact::displayShort(int index) const
         return str;
     };
 
-    std::cout << std::setw(10) << index << " | "
-              << std::setw(10) << format(firstName) << " | "
-              << std::setw(10) << format(lastName) << " | "
+    std::cout << std::setw(10) << index << "|"
+              << std::setw(10) << format(firstName) << "|"
+              << std::setw(10) << format(lastName) << "|"
               << std::setw(10) << format(nickname) << std::endl;
 }
 

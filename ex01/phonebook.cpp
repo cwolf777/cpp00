@@ -6,11 +6,11 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:03:36 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/25 16:05:48 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/26 17:38:06 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./phonebook.hpp"
+#include "./Phonebook.hpp"
 #include <iostream>
 #include <limits>
 
@@ -26,7 +26,7 @@ void	Phonebook::addContact()
 	nextIndex = (nextIndex + 1) % 8;
 }
 
-void	Phonebook::searchContacts() const
+void	Phonebook::searchContacts() const   //const?
 {
 	if (totalContacts == 0)
 	{

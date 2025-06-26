@@ -6,15 +6,22 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 13:13:01 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/25 16:10:45 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/26 17:42:37 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./contact.hpp"
+#include "./Contact.hpp"
 #include <iostream>
 #include <iomanip>
 
 Contact::Contact() {}
+
+std::string Contact::formatField(std::string str) const
+{
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return str;
+}
 
 void Contact::setContact() 
 {
@@ -36,17 +43,10 @@ void Contact::setContact()
 
 void Contact::displayShort(int index) const 
 {
-    auto format = [](std::string str) 
-	{
-        if (str.length() > 10)
-            return str.substr(0, 9) + ".";
-        return str;
-    };
-
     std::cout << std::setw(10) << index << "|"
-              << std::setw(10) << format(firstName) << "|"
-              << std::setw(10) << format(lastName) << "|"
-              << std::setw(10) << format(nickname) << std::endl;
+              << std::setw(10) << formatField(firstName) << "|"
+              << std::setw(10) << formatField(lastName) << "|"
+              << std::setw(10) << formatField(nickname) << std::endl;
 }
 
 void Contact::displayFull() const 

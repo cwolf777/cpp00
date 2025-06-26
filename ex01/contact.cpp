@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 13:13:01 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/26 17:42:37 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/26 18:15:37 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,36 @@ std::string Contact::formatField(std::string str) const
     return str;
 }
 
+std::string Contact::getValidInput(const std::string& prompt, bool digitsOnly)
+{
+    std::string input;
+    while (true)
+    {
+        std::cout << prompt;
+        std::getline(std::cin, input);
+        if (std::cin.eof())
+            exit(0);
+
+        if (input.empty())
+            continue;
+        
+        if (digitsOnly && !std::all_of(input.begin(), input.end(), ::isdigit))
+        {
+            std::cout << "Only digits allowed.\n";
+            continue;
+        }
+
+        return input;
+    }
+}
+
 void Contact::setContact() 
 {
-    std::cout << "First Name: ";
-    std::getline(std::cin, firstName);
-
-    std::cout << "Last Name: ";
-    std::getline(std::cin, lastName);
-
-    std::cout << "Nickname: ";
-    std::getline(std::cin, nickname);
-
-    std::cout << "Phone Number: ";
-    std::getline(std::cin, phoneNumber);
-
-    std::cout << "Darkest Secret: ";
-    std::getline(std::cin, darkestSecret);
+    firstName     = getValidInput("First Name: ");
+    lastName      = getValidInput("Last Name: ");
+    nickname      = getValidInput("Nickname: ");
+    phoneNumber   = getValidInput("Phone Number: ", true);
+    darkestSecret = getValidInput("Darkest Secret: ");
 }
 
 void Contact::displayShort(int index) const 

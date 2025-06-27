@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 13:13:01 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/26 18:24:36 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/27 10:57:35 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ std::string Contact::formatField(std::string str) const
     return str;
 }
 
-bool Contact::isLetter(char c)
-{
-    return std::isalpha(static_cast<unsigned char>(c));
-}
-
 std::string Contact::getValidInput(const std::string& prompt, bool digitsOnly, bool letterOnly)
 {
     std::string input;
@@ -36,23 +31,23 @@ std::string Contact::getValidInput(const std::string& prompt, bool digitsOnly, b
         std::cout << prompt;
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
-
+		{
+			std::cout << "\nInput ended (EOF detected).\n";
+			exit(0);
+		}
         if (input.empty())
             continue;
 
-        if (letterOnly && !std::all_of(input.begin(), input.end(), isLetter))
+        if (letterOnly && !std::all_of(input.begin(), input.end(), ::isalpha))
         {
             std::cout << "Only letters allowed.\n";
             continue;
         }
-        
         if (digitsOnly && !std::all_of(input.begin(), input.end(), ::isdigit))
         {
             std::cout << "Only digits allowed.\n";
             continue;
         }
-
         return input;
     }
 }

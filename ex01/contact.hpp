@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:06:13 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/26 18:23:50 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/27 10:16:09 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Contact
 		std::string darkestSecret;
 		std::string formatField(std::string str) const;
 		std::string getValidInput(const std::string& prompt, bool digitsOnly = false, bool letterOnly = false);
-		static bool isLetter(char c);
 	public:
 		Contact();
 		void setContact();

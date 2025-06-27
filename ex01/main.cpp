@@ -6,13 +6,13 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:46:51 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/26 17:54:59 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/27 10:56:55 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include <iostream>
-
+//wenn strg D endlos loop 
 int main()
 {
 	Phonebook pb;
@@ -22,7 +22,12 @@ int main()
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
         std::getline(std::cin, command);
-
+		
+		if (std::cin.eof())
+		{
+			std::cout << "\nInput ended (EOF detected).\n";
+			exit(0);
+		}
 		if (command == "ADD")
 			pb.addContact();
 		else if (command == "SEARCH")

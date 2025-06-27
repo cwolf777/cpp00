@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:03:36 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/26 17:38:06 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/06/27 10:52:47 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	Phonebook::addContact()
 	nextIndex = (nextIndex + 1) % 8;
 }
 
-void	Phonebook::searchContacts() const   //const?
+void	Phonebook::searchContacts() const
 {
 	if (totalContacts == 0)
 	{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:03:36 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/27 10:52:47 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/07/02 10:51:17 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Phonebook::searchContacts() const
 	std::string input;
 	std::getline(std::cin, input);
 
-	if (input.length() == 1 && isdigit(input[0]))
+	if (input.length() == 1 && std::isdigit(input[0]))  //warum kein std::
 	{
 		int index = input[0] - '0';
 		if (index >= 0 && index < totalContacts)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 13:13:01 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/27 10:57:35 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/07/09 10:39:07 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ Contact::Contact() {}
 
 std::string Contact::formatField(std::string str) const
 {
-    if (str.length() > 10)
-        return str.substr(0, 9) + ".";
+    if(str.length() > 10)
+    {
+        str = str.substr(0, 9);
+        str = str + ".";
+    }
     return str;
 }
 
-std::string Contact::getValidInput(const std::string& prompt, bool digitsOnly, bool letterOnly)
+std::string Contact::getValidInput(std::string prompt, bool digitsOnly, bool letterOnly)
 {
     std::string input;
     while (true)

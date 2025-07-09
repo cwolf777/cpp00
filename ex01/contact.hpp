@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:06:13 by cwolf             #+#    #+#             */
-/*   Updated: 2025/06/27 10:16:09 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/07/09 10:38:37 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Contact
 		std::string phoneNumber;
 		std::string darkestSecret;
 		std::string formatField(std::string str) const;
-		std::string getValidInput(const std::string& prompt, bool digitsOnly = false, bool letterOnly = false);
+		std::string getValidInput(std::string prompt, bool digitsOnly = false, bool letterOnly = false);
 	public:
 		Contact();
 		void setContact();

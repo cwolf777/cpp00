@@ -6,7 +6,7 @@
 /*   By: cwolf <cwolf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:03:36 by cwolf             #+#    #+#             */
-/*   Updated: 2025/07/02 10:51:17 by cwolf            ###   ########.fr       */
+/*   Updated: 2025/07/09 10:45:00 by cwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ void	Phonebook::searchContacts() const
 		contacts[i].displayShort(i);
 	}
 	
-	std::cout << "Enter index (0-" << totalContacts - 1 <<"): ";
+	std::cout << "Enter index (0-"<< totalContacts - 1 <<   "): ";
 	std::string input;
 	std::getline(std::cin, input);
 
 	if (input.length() == 1 && std::isdigit(input[0]))  //warum kein std::
 	{
-		int index = input[0] - '0';
+		int index = std::stoi(input);
 		if (index >= 0 && index < totalContacts)
 		{
 			contacts[index].displayFull();
